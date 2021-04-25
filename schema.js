@@ -18,6 +18,11 @@ module.exports = gql`
     speakers: [Speaker]
     speakerById(id: ID): Speaker
   }
+  enum Room {
+    EUROPA
+    SOL
+    SATURN
+  }
   type Mutation {
     toggleFavoriteSession(id: ID): Session
     addNewSession(session: SessionInput): Session
