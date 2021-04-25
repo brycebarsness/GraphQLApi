@@ -18,10 +18,13 @@ module.exports = gql`
     speakers: [Speaker]
     speakerById(id: ID): Speaker
   }
-  enum Room {
-    EUROPA
-    SOL
-    SATURN
+
+  union SessionOrError = Session | Error
+
+  type Error {
+    code: String
+    message: String
+    token: String
   }
   type Mutation {
     toggleFavoriteSession(id: ID): Session
@@ -60,6 +63,6 @@ module.exports = gql`
       )
     level: String
     favorite: Boolean
-    speakers: [Speaker]
+    Speakers: [Speaker]
   }
 `;
