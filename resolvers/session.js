@@ -1,7 +1,8 @@
 const _ = require("lodash");
+const { ApolloError } = require("apollo-server");
 
 module.exports = {
-  Speakers: async (session, args, { dataSources }, info) => {
+  speakers: async (session, args, { dataSources }, info) => {
     try {
       const speakers = await dataSources.speakerAPI.getSpeakers();
       const returns = speakers.filter((speaker) => {
