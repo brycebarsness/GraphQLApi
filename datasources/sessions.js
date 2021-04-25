@@ -22,7 +22,7 @@ class SessionAPI extends DataSource {
     return session[0];
   }
 
-  addNewSession(session) {
+  addSession(session) {
     session.id = 12;
     sessions.push(session);
     return session;
